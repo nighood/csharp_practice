@@ -4,5 +4,5 @@
 
 # Install
 ```shell
-brew install mono
+brew install mono-mdk
 ```
