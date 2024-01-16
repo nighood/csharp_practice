@@ -1,7 +1,12 @@
 using System;
 using OpenAI_API;
 
-public class ChatGPT {
+namespace Agent {
+public interface IAgent {
+    public string Chat(string userMessage);
+}
+
+public class ChatGPT : IAgent{
     private string apiKey;
     private string modelName;
     private float temperature;
@@ -19,4 +24,5 @@ public class ChatGPT {
         task.Wait();
         return task.Result.ToString();
     }
+}
 }

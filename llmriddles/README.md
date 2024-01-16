@@ -5,5 +5,5 @@ dotnet restore
 
 # Run
 ```shell
-OPENAI_API_KEY=<your-api-key> dotnet run <chat message>
+OPENAI_API_KEY=<your-api-key> dotnet run
 ```
