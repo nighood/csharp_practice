@@ -2,6 +2,7 @@
 using Agent;
 using Question;
 using QuestionExecutor;
+using System.Text;
 
 namespace llmriddles
 {
@@ -9,14 +10,15 @@ namespace llmriddles
     {
         static void Main(string[] args)
         {
-            string apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
+            Console.InputEncoding = Encoding.UTF8;
+            string apiKey = "";
             if (apiKey == null) {
                 Console.WriteLine("Please set OPENAI_API_KEY environment variable.");
                 return;
             }
             ChatGPT agent = new ChatGPT(apiKey, modelName: "gpt-3.5-turbo-instruct");
             LLMQuestionExecutor executor = new LLMQuestionExecutor(agent);
-            IQuestion question = new Level11();
+            IQuestion question = new Level12();
 
             Console.WriteLine(question.GetQuestionText());
             string userMessage = Console.ReadLine();
