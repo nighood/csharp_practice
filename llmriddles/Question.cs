@@ -132,7 +132,7 @@ namespace Question {
             }
             else
             {
-                return (true, null);
+                return (true, "");
             }
         }
     }
@@ -168,7 +168,7 @@ namespace Question {
             }
             else
             {
-                return (true, null);
+                return (true, "");
             }
         }
     }
@@ -203,7 +203,7 @@ namespace Question {
             }
             else
             {
-                return (true, null);
+                return (true, "");
             }
         }
     }
@@ -249,7 +249,7 @@ namespace Question {
                 return (false, errorMessage);
             }
 
-            return (true, null);
+            return (true, "");
         }
     }
 
@@ -413,7 +413,7 @@ namespace Question {
 
             bool isCorrect = answerText.Trim() == "114514";
 
-            return (isCorrect, null);
+            return (isCorrect, "");
         }
     }
 
@@ -438,18 +438,18 @@ namespace Question {
 
             if (answerText == userText)
             {
-                return (true, null);
+                return (true, "");
             }
             else
             {
-                return (false, null);
+                return (false, "");
             }
         }
     }
 
     public class Level21 : IQuestion
     {
-        private string questionText = "- 请输入一个大于一的正整数作为问题，使回答里包含和它刚好相差1的数。";
+        private string questionText = "请输入一个大于一的正整数作为问题，使回答里包含和它刚好相差1的数。";
         public bool needAgent = true;
 
         public string GetQuestionText()
@@ -475,7 +475,7 @@ namespace Question {
             }
             else
             {
-                return (true, null);
+                return (true, "");
             }
         }
 

@@ -11,17 +11,19 @@ namespace llmriddles
         static void Main(string[] args)
         {
             Console.InputEncoding = Encoding.UTF8;
-            string apiKey = "";
+            string apiKey = args[0];
             if (apiKey == null) {
                 Console.WriteLine("Please set OPENAI_API_KEY environment variable.");
                 return;
             }
             ChatGPT agent = new ChatGPT(apiKey, modelName: "gpt-3.5-turbo-instruct");
             LLMQuestionExecutor executor = new LLMQuestionExecutor(agent);
-            IQuestion question = new Level12();
+            IQuestion question = new Level21();
 
             Console.WriteLine(question.GetQuestionText());
-            string userMessage = Console.ReadLine();
+            string userInput = Console.ReadLine();
+            byte[] utf8Bytes = Encoding.UTF8.GetBytes(userInput);
+            string userMessage = Encoding.UTF8.GetString(utf8Bytes);
 
             ExecutionResult result = executor.Execute(question, userMessage);
 
